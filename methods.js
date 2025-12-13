@@ -20,10 +20,15 @@ function decodeHTML(html) {
 
 function playWith(quizz) {
     console.table(quizz);
-
+    const quizDiv = document.getElementById("quiz"); // On utilise le conteneur dédié
     for (let { question } of quizz) {
-        document.body.insertAdjacentHTML("beforeend", `<p>${decodeHTML(question)}</p>`);
+        quizDiv.insertAdjacentHTML("beforeend", `<p>${decodeHTML(question)}</p>`);
     }
+    quizDiv.addEventListener("click", (e) => {
+        if (e.target.tagName === "P") {
+            e.target.classList.toggle("selected");
+        }
+    });
 }
 
 getFromOpentdb(10);
