@@ -18,7 +18,7 @@ function playWith(quizz) {
     console.table(quizz)
 
     for (let {question} of quizz ) {
-        document.body.insertAdjacentHTML("beforeend", `<p>${question}`)
+        document.body.insertAdjacentHTML("beforeend", `<p>${question}</p>`)
      }
 
 }
