@@ -20,7 +20,7 @@ function decodeHTML(html) {
 
 function playWith(quizz) {
     console.table(quizz);
-    const quizDiv = document.getElementById("quiz"); // On utilise le conteneur dédié
+    const quizDiv = document.getElementById("quiz"); 
     for (let { question } of quizz) {
         quizDiv.insertAdjacentHTML("beforeend", `<p>${decodeHTML(question)}</p>`);
     }
